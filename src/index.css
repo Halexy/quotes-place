@@ -103,8 +103,22 @@ html, body {
   color: #999;
 }
 
-/* Create page */
 
-#create {
-  display: none;
+.bannTitle{
+  background: #f5d8e5;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.form label{
+  font-weight:600;
+}
+.form button{
+  background: #25274d;
+  color: #fff;
+  font-weight: 600;
+  width: 25%;
+}
+.form button:focus{
+  box-shadow:none;
 }
