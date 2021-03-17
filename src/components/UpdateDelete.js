@@ -7,7 +7,7 @@ const UpdateDelete = ({ item }) => {
     const [textUpdate, setTextUpdate] = useState(null);
 
     const updateItem = () => {
-        let quote = firebase.database().ref("quotesDB").child(item.id);
+        let quote = firebase.database().ref("quotesDB").child(item.id); // Identify quote
 
         if (authorUpdate !== null) {
             quote.update({
@@ -22,7 +22,14 @@ const UpdateDelete = ({ item }) => {
         }
 
         setUpdate(false);
+    };
+
+    const deleteItem = () => {
+        let quote = firebase.database().ref("quotesDB").child(item.id);
+
+        quote.remove();
     }
+
 
     return (
         
@@ -37,7 +44,7 @@ const UpdateDelete = ({ item }) => {
  
                         <div className="button-container mt-2">
                             <button onClick={() => setUpdate(!update)} className="btn btn-info btn-sm mr-1">Modifier</button>
-                            <button className="btn btn-danger btn-sm ml-1">Supprimer</button>
+                            <button onClick={deleteItem} className="btn btn-danger btn-sm ml-1">Supprimer</button>
                         </div>
                     </blockquote>
                 )}
