@@ -39,7 +39,7 @@ const Create = () => {
     <div className="col-8 mx-auto">
 
       <div className="form-group">
-        <label className="control-label col-sm-2" for="fname">Auteur</label>
+        <label className="control-label col-sm-2">Auteur</label>
         <div className="col-8 mx-auto">          
             <input
             type="text"
@@ -52,7 +52,7 @@ const Create = () => {
       </div>
 
       <div className="form-group">
-        <label className="control-label text-center" for="comment">Citation</label>
+        <label className="control-label text-center">Citation</label>
         <div className="col-8 mx-auto">
             <textarea
             type="text"

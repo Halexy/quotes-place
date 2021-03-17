@@ -2,6 +2,7 @@ import React from 'react';
 import firebase from '../utils/firebaseConfig';
 import logo from '../img/logo.png';
 import Create from './Create';
+import Read from './Read';
 
 const Main = () => {
     return (
@@ -12,6 +13,7 @@ const Main = () => {
                 <button onClick={() => firebase.auth().signOut()} type="button" className="btn btn-danger">Se déconnecter</button>
            </nav>
            <Create />
+           <Read />
         </main>
     )
 }
