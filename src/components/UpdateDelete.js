@@ -1,10 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import firebase from '../utils/firebaseConfig';
+import { UidContext } from './UidContext';
 
 const UpdateDelete = ({ item }) => {
     const [update, setUpdate] = useState(false);
     const [authorUpdate, setAuthorUpdate] = useState(null);
     const [textUpdate, setTextUpdate] = useState(null);
+
+    const uid = useContext(UidContext);
+
+    const authorCheck = () => {
+        if (item.uid === uid) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    authorCheck();
+
 
     const updateItem = () => {
         let quote = firebase.database().ref("quotesDB").child(item.id); // Identify quote
@@ -32,29 +46,31 @@ const UpdateDelete = ({ item }) => {
 
 
     return (
-        
-            <div className="card col-3 mx-auto p-0 shadow">
-                <div className="card-body bg-dark">
+
+        <div className="card col-3 mx-auto p-0 shadow">
+            <div className="card-body bg-dark">
                 {update === false && (
                     <blockquote className="blockquote mb-0">
                         <div className="item-container">
                             <p className="text-light">"{item.text}"</p>
                             <footer className="blockquote-footer">{item.author}</footer>
                         </div>
- 
-                        <div className="button-container mt-2">
-                            <button onClick={() => setUpdate(!update)} className="btn btn-info btn-sm mr-1">Modifier</button>
-                            <button onClick={deleteItem} className="btn btn-danger btn-sm ml-1">Supprimer</button>
-                        </div>
+                        {authorCheck() && (
+                            <div className="button-container mt-2">
+                                <button onClick={() => setUpdate(!update)} className="btn btn-info btn-sm mr-1">Modifier</button>
+                                <button onClick={deleteItem} className="btn btn-danger btn-sm ml-1">Supprimer</button>
+                            </div>
+                        )}
+
                     </blockquote>
                 )}
 
-                {update && 
+                {update &&
                     <div className="item-container-update">
                         <div className="form-group">
-                            <textarea 
+                            <textarea
                                 defaultValue={item.text}
-                                onChange={(e) => 
+                                onChange={(e) =>
                                     setTextUpdate(e.target.value)
                                 }
                                 className="form-control"
@@ -62,10 +78,10 @@ const UpdateDelete = ({ item }) => {
                         </div>
 
                         <div className="form-group">
-                            <input 
+                            <input
                                 type="text"
                                 defaultValue={item.author}
-                                onChange={(e) => 
+                                onChange={(e) =>
                                     setAuthorUpdate(e.target.value)
                                 }
                                 className="form-control"
@@ -77,8 +93,8 @@ const UpdateDelete = ({ item }) => {
                     </div>
 
                 }
-                </div>
             </div>
+        </div>
 
     )
 }
