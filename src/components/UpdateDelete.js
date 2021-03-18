@@ -40,15 +40,19 @@ const UpdateDelete = ({ item }) => {
 
     const deleteItem = () => {
         let quote = firebase.database().ref("quotesDB").child(item.id);
+        var res = window.confirm("Êtes-vous sûr de vouloir supprimer?");
 
-        quote.remove();
+        if(res){
+            quote.remove();
+        }
+
     }
 
 
     return (
 
-        <div className="card col-10 col-md-3 mx-auto shadow">
-            <div className="card-body bg-dark">
+        <div className="card col-10 col-md-5 mx-auto my-3 p-0 rounded shadow">
+            <div className="card-body bg-dark mx-auto col-12">
                 {update === false && (
                     <blockquote className="blockquote mb-0">
                         <div className="item-container">

@@ -39,11 +39,11 @@ const Create = () => {
 
         <div className="col-12 py-4 form">
 
-          <div className="col-8 mx-auto">
+          <div className="col-12 col-md-8 mx-auto">
 
             <div className="form-group">
               <label className="control-label col-sm-2">Auteur</label>
-              <div className="col-8 mx-auto">
+              <div className="col-11 col-md-8 mx-auto">
                 <input
                   type="text"
                   placeholder="Albert Einstein"
@@ -56,7 +56,7 @@ const Create = () => {
 
             <div className="form-group">
               <label className="control-label text-center">Citation</label>
-              <div className="col-8 mx-auto">
+              <div className="col-11 col-md-8 mx-auto">
                 <textarea
                   type="text"
                   placeholder="Un problème sans solution est un problème mal posé"
@@ -69,7 +69,7 @@ const Create = () => {
 
             <div className="form-group">
               <div className="col-12">
-                <button onClick={createQuote} className="btn btn-success">Créer</button>
+                <button onClick={createQuote} className="btn btn-info">Créer</button>
               </div>
             </div>
 

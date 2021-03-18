@@ -41,6 +41,13 @@ html, body {
   height: 100%;
 }
 
+/* Btn */
+.btn:hover {
+  background-color: white !important;
+  color: #222222 !important;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 /* HEADER SECTION */
 
 .loginPage {
@@ -59,16 +66,6 @@ html, body {
   background-size: cover;
 }
 
-@media only screen and (max-width : 500px) {
-  .loginPage h1 {
-    font-size: 1.5rem !important;
-  }
-  .loginPage h2 {
-    font-size: 1rem !important;
-  }
-  
-  }
-
 .boxText {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0, 0.7); /* Black w/opacity/see-through */
@@ -80,6 +77,32 @@ html, body {
 #firebaseui_container {
   margin: auto;
   width: 100%;
+}
+
+/* Form */
+
+.form label{
+  font-weight:600;
+}
+.form button{
+  font-weight: 600;
+}
+
+.form button:focus{
+  box-shadow:none;
+}
+
+
+/* Card */
+
+.card:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+  box-shadow: 0 20px 20px 0 rgba(22, 22, 26, 0.5) !important;
+}
+
+.blockquote-footer {
+  color: #03C9A9 !important;
 }
 
 /* Copyrights */
@@ -103,28 +126,19 @@ html, body {
   color: #999;
 }
 
-.form label{
-  font-weight:600;
-}
-.form button{
-  background: #25274d;
-  color: #fff;
-  font-weight: 600;
-  width: 25%;
-}
-.form button:focus{
-  box-shadow:none;
-}
 
+/* Media queries */
 
-/* Card */
+@media only screen and (max-width : 500px) {
+  .loginPage h1 {
+    font-size: 1.5rem !important;
+  }
+  .loginPage h2 {
+    font-size: 1rem !important;
+  }
 
-.card:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease;
-  box-shadow: 0 20px 20px 0 rgba(22, 22, 26, 0.5) !important;
-}
-
-.blockquote-footer {
-  color: #03C9A9 !important;
-}
+  h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  }

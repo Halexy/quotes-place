@@ -20,7 +20,7 @@ const Read = () => {
 
     return (
         <div className="read">
-            <ul>
+            <ul className="p-0">
             <div className="row my-3">
                 {quoteList && // If quoteList is true
                     quoteList.map((item, index) => (
