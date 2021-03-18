@@ -34,10 +34,10 @@ function App() {
     })
   }, []);
 
-  
+
   return (
     // unique user value
-    <UidContext.Provider value ={Uid}>
+    <UidContext.Provider value={Uid}>
       <div className="App">
         {isSignedIn ? ( // If user is signed
           <Main />
@@ -47,33 +47,33 @@ function App() {
 
               <div className="container-fluid boxText">
                 <div className="col-11 p-0 mx-auto">
-                    <img src={logo} width="150" height="160" className="d-inline-block align-top" alt="Logo pictures place" />
-                    <h1 className="h1 text-center">QUOTES PLACE</h1>
-                    <h2 className="h3 text-center">Identifiez-vous pour accédez aux citations et en ajouter !</h2>
+                  <img src={logo} width="150" height="160" className="d-inline-block align-top" alt="Logo pictures place" />
+                  <h1 className="h1 text-center">QUOTES PLACE</h1>
+                  <h2 className="h3 text-center">Identifiez-vous pour accédez aux citations et en ajouter !</h2>
                 </div>
 
-                <div className="row col-12 mx-auto">       
-                  <StyledFirebaseAuth 
+                <div className="row col-12 mx-auto">
+                  <StyledFirebaseAuth
                     uiConfig={uiConfig}
                     firebaseAuth={firebase.auth()}
                   />
                 </div>
               </div>
-              
+
             </div>
           </div>
         )}
 
         {/* copyrights */}
-          <div id="copyrights">
-            <div className="container">
-              <p>
+        <div id="copyrights">
+          <div className="container">
+            <p>
               &copy; Copyrights <strong>Hajjar Alexy</strong>
-              </p>
-              <div className="credits">
-                Site réalisé avec React JS par <a href="https://www.alexyhajjar.fr/">AlexyHajjar</a>
-              </div>
+            </p>
+            <div className="credits">
+              Site réalisé avec React JS par <a href="https://www.alexyhajjar.fr/">AlexyHajjar</a>
             </div>
+          </div>
         </div>
 
       </div>

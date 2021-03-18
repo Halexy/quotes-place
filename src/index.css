@@ -103,13 +103,6 @@ html, body {
   color: #999;
 }
 
-
-.bannTitle{
-  background: #fce0a2;
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-}
-
 .form label{
   font-weight:600;
 }

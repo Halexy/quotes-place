@@ -47,7 +47,7 @@ const UpdateDelete = ({ item }) => {
 
     return (
 
-        <div className="card col-3 mx-auto p-0 shadow">
+        <div className="card col-10 col-md-3 mx-auto shadow">
             <div className="card-body bg-dark">
                 {update === false && (
                     <blockquote className="blockquote mb-0">
